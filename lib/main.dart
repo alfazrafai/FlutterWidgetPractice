@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import 'CustomButton.dart';
+
 void main() {
   runApp(FlutterWidget());
 }
@@ -29,12 +31,27 @@ class _FlutterWidgetState extends State<FlutterWidget> {
             // child: Text("data fvxcvfsdfsdfafdsf"),
             // )
             //   ,)
-            Center(child: Text("The Random Number is ${getRandom()}")),
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("The Random Number is "),
+              PrimaryButton(
+                label: "Generate",
+                onPressed: getRandom,
+              ),
+            ],
+          ),
+        ),
       ),
     );
+
   }
 }
 
 int getRandom() {
   return Random().nextInt(100);
 }
+
+
+
